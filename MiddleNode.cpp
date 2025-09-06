@@ -1,4 +1,4 @@
- #include<iostream>
+  #include<iostream>
 using namespace std;
 class Node{
     public:
@@ -14,6 +14,11 @@ class Node{
 class Linkedlist{
     private:
     Node* head;
+    void printReverseRec(Node* node){
+        if(!node) return;
+        printReverseRec(node->next);
+        cout<<node->data<<" ";
+    }
     public:
     Linkedlist(){
    head  = nullptr;
@@ -57,62 +62,6 @@ head = newnode;
         newnode->next = temp->next;
         temp->next = newnode;
     }
-    //deleteatbegin
-
-    void deleteAtBegin(){
-        if(!head){
-            cout<<"Lost is empty\n";
-            return;
-        }
-        Node* temp = head;
-        head = head->next;
-        delete temp;
-
-    }
-    //deleteatend
-
-    void deleteAtEnd(){
-        if(!head){
-            cout<<"LIst is empty\n";
-            return;
-        }
-        if(!head->next){
-            delete head;
-            head = nullptr;
-            return;
-        }
-        Node* temp = head;
-        while(temp->next->next)temp = temp->next;
-        delete temp->next;
-        temp->next = nullptr;
-    }
-    //deleteAtSpecificPOsition
-    void deleteAtSpecificPOsition(int pos){
-        if(pos<=0){
-            cout<<"Invalid position\n";
-            return;
-
-        }
-        if(!head){
-            cout<<"List is empty\n";
-            return;
-        }
-        if(pos == 1){
-            deleteAtBegin();
-            return;
-        }
-        Node* temp = head;
-        for(int i=1;temp&& i<pos-1;i++){
-            temp = temp->next;
-        }
-        if(!temp|| !temp->next){
-            cout<<"Position out of range\n";
-            return;
-        }
-        Node* delnode = temp->next;
-        temp->next = delnode->next;
-        delete delnode;
-    }
     int countNodes(){
         int count = 0;
         Node*  temp = head;
@@ -130,6 +79,24 @@ head = newnode;
     }
     cout<<"Null pointer\n";
    }
+   void printReverse(){
+    printReverseRec(head);
+    cout<<endl;
+   }
+
+   void middleNode(){
+    if(!head){
+        cout<<"list is empty\n";
+        return;
+    }
+    Node* slow = head;
+    Node* fast = head;
+    while(head&&head->next){
+slow = slow->next;
+fast = fast->next->next;
+cout<<"Middle node found at"<<slow->data<<endl;
+    }
+   }
 };
 int main(){
     Linkedlist list;
@@ -137,18 +104,11 @@ int main(){
     list.inserAtSpecificPssition(2,9898);
     list.insertAtBegin(87);
     list.insertAtBegin(999);
-    cout<<"linked list are:";
+    cout<<"original list are:";
     list.display();
-    list.deleteAtBegin();
-    cout<<"list after deleting at begin";
-    list.display();
-    list.deleteAtSpecificPOsition(2);
-    cout<<"list after deleting that number";
-    list.display();
-    list.deleteAtEnd();
-    cout<<"list after deleting that number";
-    list.display();
-
     cout<<"Number of nodes are:"<<list.countNodes()<<endl;
+    cout<<"Reverse list are:";
+    list.printReverse();
+    list.middleNode();
     return 0;
 }

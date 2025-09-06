@@ -1,4 +1,4 @@
- #include<iostream>
+#include<iostream>
 using namespace std;
 class Node{
     public:
@@ -57,62 +57,6 @@ head = newnode;
         newnode->next = temp->next;
         temp->next = newnode;
     }
-    //deleteatbegin
-
-    void deleteAtBegin(){
-        if(!head){
-            cout<<"Lost is empty\n";
-            return;
-        }
-        Node* temp = head;
-        head = head->next;
-        delete temp;
-
-    }
-    //deleteatend
-
-    void deleteAtEnd(){
-        if(!head){
-            cout<<"LIst is empty\n";
-            return;
-        }
-        if(!head->next){
-            delete head;
-            head = nullptr;
-            return;
-        }
-        Node* temp = head;
-        while(temp->next->next)temp = temp->next;
-        delete temp->next;
-        temp->next = nullptr;
-    }
-    //deleteAtSpecificPOsition
-    void deleteAtSpecificPOsition(int pos){
-        if(pos<=0){
-            cout<<"Invalid position\n";
-            return;
-
-        }
-        if(!head){
-            cout<<"List is empty\n";
-            return;
-        }
-        if(pos == 1){
-            deleteAtBegin();
-            return;
-        }
-        Node* temp = head;
-        for(int i=1;temp&& i<pos-1;i++){
-            temp = temp->next;
-        }
-        if(!temp|| !temp->next){
-            cout<<"Position out of range\n";
-            return;
-        }
-        Node* delnode = temp->next;
-        temp->next = delnode->next;
-        delete delnode;
-    }
     int countNodes(){
         int count = 0;
         Node*  temp = head;
@@ -139,16 +83,6 @@ int main(){
     list.insertAtBegin(999);
     cout<<"linked list are:";
     list.display();
-    list.deleteAtBegin();
-    cout<<"list after deleting at begin";
-    list.display();
-    list.deleteAtSpecificPOsition(2);
-    cout<<"list after deleting that number";
-    list.display();
-    list.deleteAtEnd();
-    cout<<"list after deleting that number";
-    list.display();
-
     cout<<"Number of nodes are:"<<list.countNodes()<<endl;
     return 0;
 }
