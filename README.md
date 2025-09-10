@@ -1,6 +1,6 @@
 # Linked List Programs in C++
 
-This repository contains various implementations and operations on **Singly Linked Lists** in C++.  
+This repository contains various implementations and operations on **Linked Lists** in C++.  
 Each program is written for learning and practicing **Data Structures and Algorithms (DSA)**, especially for placement preparation.
 
 ## 📂 Contents
@@ -28,6 +28,45 @@ Each program is written for learning and practicing **Data Structures and Algori
   - Find Nth node from the end
   - Reverse linked list (Iterative & Recursive)
   - Check if linked list is a palindrome
+  - # Linked List Programs in C++
+
+
+
+## ✅ Programs Included
+
+1. **Palindrome.cpp**  
+   Check whether a linked list is a palindrome.
+
+2. **ReverseIterative.cpp**  
+   Reverse a linked list using an iterative method.
+
+3. **DetectLoop.cpp**  
+   Detect if a linked list contains a loop (cycle).
+
+4. **RemoveLoop.cpp**  
+   Remove a loop in a linked list if present.
+
+5. *(Add any other linked list programs here)*
+
+---
+
+## 🛠 Features
+
+- Singly Linked List operations
+- Iterative and recursive approaches
+- Algorithmic problem solving
+- Easy-to-understand C++ code with comments
+
+---
+
+## 💻 How to Run
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/linked-list.git
+cd linked-list
+
 
 ## 🛠 Compilation & Execution
 
@@ -40,4 +79,4 @@ g++ Findnthnode.cpp -o Findnthnode
 
 ---
 
-Do you want me to also **add this README to your repo and push it** so it appears immediately on GitHub? That way, your repo will look clean and professional.
+
