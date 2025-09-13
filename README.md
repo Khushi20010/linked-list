@@ -29,6 +29,29 @@ Each program is written for learning and practicing **Data Structures and Algori
   - Reverse linked list (Iterative & Recursive)
   - Check if linked list is a palindrome
   - # Linked List Programs in C++
+# Linked List Implementations in C++
+
+This repository contains various implementations and problems related to **Linked Lists** in C++.
+
+## 📌 Topics Covered
+- Creation of a Linked List
+- Insertion at beginning, end, and given position
+- Deletion from beginning, end, and given position
+- Traversal and Display
+- Merging Two Sorted Linked Lists (Iterative & Recursive)
+- Intersection of Two Linked Lists
+- Rotation of Linked List by K positions
+
+## 🚀 Files in Repository
+- `MergeTwoSortedLinkedList.cpp` → Merge two sorted linked lists (iterative & recursive)
+- `IntersectionOfLL.cpp` → Find intersection point of two linked lists
+- `rotationBYK.cpp` → Rotate linked list by K positions
+- Other helper files and executables
+
+## 🛠️ How to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Khushi20010/linked-list.git
 
 
 
