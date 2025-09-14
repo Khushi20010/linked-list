@@ -35,26 +35,29 @@
         }
         cout<<"Null pointer\n";
     }
-       Node* rotateByK(Node* head  , int k){
-        if(!head||!head->next|| k==0) return nullptr;
+       Node* rotatebyK(Node* head , int k){
+        if(!head||!head->next||k==0) return nullptr;
         Node* temp = head;
-        int length  =1;
+        int length = 1;
         while(temp->next){
             temp = temp->next;
-            length++;
-        }
-        temp->next  = head;
-        k = k % length;
-int stepsToNewHead = length - k;
-Node* newTail = head;
-for(int i=1;i<stepsToNewHead;i++){
-    newTail = newTail->next;
-}
-Node* newHead = newTail->next;
-newTail->next = nullptr;
-return newHead;
+               length++;
 
-    }
+        }
+        temp->next = head;
+        k = k%length;
+        int stepstonewhead = length-k;
+        Node* newTail  =head;
+        for(int i=1;i<stepstonewhead;i++){
+            newTail = newTail->next;
+
+        }
+        Node* newHead = newTail->next;
+        newTail->next = nullptr;
+        return newHead;
+     
+
+       }
 };
 int main(){
     Linkedlist list;
@@ -65,9 +68,9 @@ int main(){
     list.insertAtEnd(7);
     cout<<"original List are: ";
     list.display();
-    int k = 3;
-    list.head = list.rotateByK(list.head , k);
-    cout<<"Rotated List by"<<k<<":";
-    list.display();
-    return 0;
+   int k = 4;
+   list.head = list.rotatebyK(list.head , k);
+   cout<<"Rotated List by"<<k<<":";
+   list.display();
+   return 0;
 }
